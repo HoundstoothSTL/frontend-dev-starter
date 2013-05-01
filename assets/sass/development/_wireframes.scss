@@ -1,0 +1,14 @@
+@if $wireFrames == true {
+
+	.container {
+		@include grid-background;
+	}
+	
+}
+
+.module-wireframe {
+	padding: $baseSpacing +em;
+	background:$modWireframeBoxColor;
+	border:$modWireframeBorder;
+	min-height:$baseSpacing +em;
+}

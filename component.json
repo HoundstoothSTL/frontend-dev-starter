@@ -1,0 +1,14 @@
+{
+  "name": "Alderaan",
+  "version": "0.2.0",
+  "main": "./assets/js/app.js",
+  "description": "For use with Bower package manager. In this directory, run [bower install] to get dev components. This is part of the Aldren framework from Houndstooth, https://github.com/HoundstoothSTL",
+  "dependencies": {},
+  "devDependencies": {
+    "jquery": "~1.9",
+    "modernizr": "latest",
+    "font-awesome": "latest",
+    "respondjs": "git://github.com/scottjehl/Respond.git",
+    "flexslider": "latest"
+  }
+}

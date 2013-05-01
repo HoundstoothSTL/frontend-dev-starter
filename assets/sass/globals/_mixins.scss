@@ -1,0 +1,144 @@
+@mixin btn-theme($btnType) {
+  border-color: darken($btnType, 20%);
+  background-color: $btnType;
+  &:hover {
+    background-color: darken($btnType, 6%);
+    @include box-shadow(inset 0 .063em $offWhite, inset 0 -.188em lighten($btnType, 2%));
+  }
+  &:active {
+    @include box-shadow(0 .063em $offWhite, inset 0 0 0.5em darken($btnType, 20%), inset 0 .0625em darken($btnType, 20%),inset 0 -0.0625em darken($btnType, 20%)); 
+  }
+}
+
+// RGBA Color with fallback
+@mixin rgba-background($color,$alpha) {
+  background:$color;
+  background:rgba($color,$alpha);
+} 
+
+// ex: @include font-size(24);
+@mixin font-size($fontSize){
+    font-size:$fontSize +px;
+    font-size:($fontSize / $baseFontSize)+rem;
+    //line-height:ceil($fontSize / $baseLineHeight) * ($baseLineHeight / $fontSize);
+}
+
+@mixin text-overflow() {
+	overflow : hidden;
+	text-overflow : ellipsis;
+	white-space : nowrap; 
+}
+
+@mixin list-inline() {
+  float: left;
+  display: inline;
+}
+
+// If you don't like the compass clearfix that uses overflow: hidden;
+@mixin clear() {
+  zoom:1;
+
+  &:before,
+  &:after{
+      content:"";
+      display:table;
+  }
+
+  &:after{
+      clear:both;
+  }
+}
+
+// ex: @include vendor(box-sizing, border-box);
+@mixin vendor($property, $value){
+    -webkit-#{$property}:$value;
+       -moz-#{$property}:$value;
+        -ms-#{$property}:$value;
+         -o-#{$property}:$value;
+            #{$property}:$value;
+}
+
+// Let's do some fancy media query mixing
+// Taken from Chris Coyier, http://css-tricks.com/media-queries-sass-3-2-and-codekit
+
+@mixin breakpoint($point) {
+  @if $point == massive {
+    @media (min-width: $massiveViewportWidth) { @content; }
+  }
+  @else if $point == xxl {
+    @media (min-width: $xxlargeViewportWidth) { @content; }
+  }
+  @else if $point == xl {
+    @media (min-width: $xlargeViewportWidth)  { @content; }
+  }
+  @else if $point == large {
+    @media (min-width: $largeViewportWidth)  { @content; }
+  }
+  @else if $point == medium {
+    @media (min-width: $mediumViewportWidth)  { @content; }
+  }
+  @else if $point == small {
+    @media (min-width: $smallViewportWidth)  { @content; }
+  }
+  @else if $point == mini {
+    @media (max-width: $miniViewportWidth)  { @content; }
+  }
+}
+
+@mixin between($points) {
+
+  @if $points == large-xlarge {
+    @media (min-width: $largeViewportWidth) and (max-width: $xlargeViewportWidth - 1)  { @content; }
+  }
+  @else if $points == medium-large {
+    @media (min-width: $mediumViewportWidth) and (max-width: $largeViewportWidth - 1)  { @content; }
+  }
+  @else if $points == small-medium {
+    @media (min-width: $miniViewportWidth) and (max-width: $mediumViewportWidth - 1)  { @content; }
+  }
+}
+
+/**
+ * Create CSS keyframe animations for all vendors in one go, e.g.:
+ * 
+   .foo{
+       @include vendor(animation, shrink 3s);
+   }
+   
+   @include keyframe(shrink){
+       from{
+           font-size:5em;
+       }
+   }
+ * 
+ * Courtesy of @integralist: twitter.com/integralist/status/260484115315437569
+ */
+@mixin keyframe($animation-name){
+    @-webkit-keyframes $animation-name{
+        @content;
+    }
+    
+    @-moz-keyframes $animation-name{
+        @content;
+    }
+    
+    @-ms-keyframes $animation-name{
+        @content;
+    }
+    
+    @-o-keyframes $animation-name{
+        @content;
+    }
+    
+    @keyframes $animation-name{
+        @content;
+    }
+}
+
+// ex: @include truncate(100%);
+@mixin truncate($truncation-boundary){
+    max-width:$truncation-boundary;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}

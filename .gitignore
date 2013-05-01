@@ -1,0 +1,9 @@
+.DS_Store
+__MACOSX
+dist
+node_modules
+.sass-cache
+components/
+env_local
+assets/sass/project/*
+!assets/sass/project/_variables.default.scss

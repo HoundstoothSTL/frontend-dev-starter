@@ -1,0 +1,42 @@
+// 480px
+@media only screen and (min-width: $miniViewportWidth) {
+	@import "_phone-landscape";
+}
+
+// 600px
+@media only screen and (min-width: $smallViewportWidth) {
+	@import "_small-tablet";
+}
+
+// 768px
+@media only screen and (min-width: $mediumViewportWidth) {
+	@import "_tablet";
+}
+
+// 992px
+@media only screen and (min-width: $largeViewportWidth) {
+	@import "_desktop";
+}
+
+// 1382px
+@media only screen and (min-width: $xlargeViewportWidth) {
+	@import "_large-desktop";
+}
+
+// 1800px
+@media only screen and (min-width: $xxlargeViewportWidth) {
+	@import "_x-large-desktop";
+}
+
+// 2200px
+@media only screen and (min-width: $massiveViewportWidth) {
+	@import "_xxl";
+}
+
+// 2x
+@media
+only screen and (-webkit-min-device-pixel-ratio: 1.5), 
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5) {
+	@import "_high-density"; 
+}

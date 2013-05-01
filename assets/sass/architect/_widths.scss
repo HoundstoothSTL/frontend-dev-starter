@@ -1,0 +1,167 @@
+/*------------------------------------*\
+    $WIDTHS
+------------------------------------*/
+// We're going to mix column spans and human-readable, semantic fractions, some like one, some like the other, matter of choice really.
+// Since we're mobile-first, all columns and widths are set to 100% out the gate, then begin sub-dividing at the large tablet size (portrait mode).
+
+@if $colspan-grids == true {
+	.col-1,
+	.col-2,
+	.col-3,
+	.col-4,
+	.col-5,
+	.col-6,
+	.col-7,
+	.col-8,
+	.col-9,
+	.col-10,
+	.col-11,
+	.col-12  { width:100%; }
+}
+
+@if $semantic-grids == true {
+	.one-whole,
+	.one-half,          
+	.one-third,         
+	.two-thirds,       
+	.one-quarter,     	
+	.two-quarters,   	
+	.three-quarters,    
+	.one-fifth,    
+	.two-fifths,     
+	.three-fifths,     
+	.four-fifths,     	
+	.one-sixth,      	
+	.two-sixths,    	
+	.three-sixths,      
+	.four-sixths,      	
+	.five-sixths,    
+	.one-eighth,    	
+	.two-eighths,   	
+	.three-eighths,  
+	.four-eighths,   
+	.five-eighths,
+	.six-eighths,
+	.seven-eighths,
+	.one-tenth,
+	.two-tenths,
+	.three-tenths,
+	.four-tenths,
+	.five-tenths,
+	.six-tenths,
+	.seven-tenths,
+	.eight-tenths,
+	.nine-tenths,
+	.one-twelfth,
+	.two-twelfths,
+	.three-twelfths,
+	.four-twelfths,
+	.five-twelfths,
+	.six-twelfths,
+	.seven-twelfths,
+	.eight-twelfths,
+	.nine-twelfths, 
+	.ten-twelfths,
+	.eleven-twelfths  { width:100%; }
+}
+
+
+@media (min-width:768px) {
+
+	//Pick your poison, using colspans or semantic fractions
+	@if $colspan-grids == true {
+		// Colspans
+		.col-12				{ width: 100% 	 }
+		.col-11				{ width: 91.666% }
+		.col-10				{ width: 83.333% }
+		.col-9				{ width: 75%     }
+		.col-8				{ width: 66.666% }
+		.col-7				{ width: 58.333% }
+		.col-6 				{ width: 50%	 }
+		.col-5 				{ width: 41.666% }
+		.col-4				{ width: 33.333% }
+		.col-3				{ width: 25%	 }
+		.col-2				{ width: 16.666% }
+		.col-1				{ width: 8.333%  }
+	}
+
+	@if $semantic-grids == true {
+		// Semantic Fractions
+		.one-whole          { width:100%; }
+
+		.one-half           { width:50%; }
+
+		.one-third          { width:33.333%; }
+		.two-thirds         { width:66.666%; }
+
+		.one-quarter      	{ width:25%; }
+		.two-quarters     	{ @extend .one-half; }
+		.three-quarters     { width:75%; }
+
+		.one-fifth        	{ width:20%; }
+		.two-fifths       	{ width:40%; }
+		.three-fifths       { width:60%; }
+		.four-fifths       	{ width:80%; }
+
+		.one-sixth        	{ width:16.666%; }
+		.two-sixths       	{ @extend .one-third; }
+		.three-sixths       { @extend .one-half; }
+		.four-sixths       	{ @extend .two-thirds; }
+		.five-sixths       	{ width:83.333%; }
+
+		.one-eighth       	{ width:12.5%; }
+		.two-eighths      	{ @extend .one-quarter; }
+		.three-eighths      { width:37.5%; }
+		.four-eighths      	{ @extend .one-half; }
+		.five-eighths      	{ width:62.5%; }
+		.six-eighths      	{ @extend .three-quarters; }
+		.seven-eighths      { width:87.5%; }
+
+		.one-tenth        	{ width:10%; }
+		.two-tenths       	{ @extend .one-fifth; }
+		.three-tenths       { width:30%; }
+		.four-tenths       	{ @extend .one-fifth; }
+		.five-tenths       	{ @extend .one-half; }
+		.six-tenths       	{ @extend .three-fifths; }
+		.seven-tenths       { width:70%; }
+		.eight-tenths       { @extend .four-fifths; }
+		.nine-tenths       	{ width:90%; }
+
+		.one-twelfth     	{ width:8.333%; }
+		.two-twelfths    	{ @extend .one-sixth; }
+		.three-twelfths    	{ @extend .one-quarter; }
+		.four-twelfths    	{ @extend .one-third; }
+		.five-twelfths    	{ width:41.666% }
+		.six-twelfths    	{ @extend .one-half; }
+		.seven-twelfths    	{ width:58.333%; }
+		.eight-twelfths    	{ @extend .two-thirds; }
+		.nine-twelfths    	{ @extend .three-quarters; }
+		.ten-twelfths    	{ @extend .five-sixths; }
+		.eleven-twelfths    { width:91.666%; }
+	}
+
+}
+
+.oldie { // Just hard-code a 960 grid for old IE, because it's stupid
+
+	//Pick your poison, using colspans or semantic fractions
+	@if $colspan-grids == true {
+		// Colspans
+		$total: 960;
+		$col: 58;
+		$gutter: 24;
+		
+		.col-12				{ width: $total+px; 					}
+		.col-11				{ width: (($col*11)+($gutter*10))+px;	}
+		.col-10				{ width: (($col*10)+($gutter*9))+px; 	}
+		.col-9				{ width: (($col*9)+($gutter*8))+px;		}
+		.col-8				{ width: (($col*8)+($gutter*7))+px;		}
+		.col-7				{ width: (($col*7)+($gutter*6))+px;		}
+		.col-6 				{ width: (($col*6)+($gutter*5))+px;		}
+		.col-5 				{ width: (($col*5)+($gutter*4))+px;		}
+		.col-4				{ width: (($col*4)+($gutter*3))+px;		}
+		.col-3				{ width: (($col*3)+($gutter*2))+px;		}
+		.col-2				{ width: (($col*2)+($gutter*1))+px;		}
+		.col-1				{ width: (($col*1)+($gutter*0))+px;		}
+	}
+}

@@ -1,0 +1,59 @@
+html {
+	-webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin-top:0; // Hate the normalize.css margin fixes for headlines
+	margin-bottom:$halfSpacing +em;
+}
+
+h1 {
+	@include font-size(32);
+}
+
+h2 {
+	@include font-size(26);
+}
+
+h3 {
+	@include font-size(22);
+}
+
+p {
+	@include font-size(16);
+	font-weight:300;
+}
+
+blockquote {
+	padding-left: 1.5em;
+	margin-left:0;
+	font-style: italic;
+
+	p {
+		&:before {
+			content:"“";
+			display:inline;
+		}
+
+		&:after {
+			content:"”";
+			display:inline;
+		}
+	}
+}
+
+.drop-caps:first-letter { 
+	float: left; 
+	@include font-size(54); 
+	line-height: 44px; 
+	padding-top: 4px; 
+	padding-right: 4px; 
+	padding-left: 0; 
+	font-family: Georgia;
+}

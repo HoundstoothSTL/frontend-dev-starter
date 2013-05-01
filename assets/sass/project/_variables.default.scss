@@ -1,0 +1,109 @@
+/*------------------------------------*\
+    $VARIABLES
+------------------------------------*/
+
+// LESS doesn't support logical operations very well, working on a guarded mixin approach...
+// See _theme.less <html> element to turn on/off debug mode
+$debugMode:		false;
+$wireFrames:	false;
+
+// Let's setup Wireframe mode
+$modWireframeBoxColor:		#f6f6f6;
+$modWireframeBorder:		1px dashed #ccc;
+
+$grid-background-column-color: rgba(39,191,207,0.1);
+$grid-background-baseline-color: rgba(0, 0, 0, 0.1);
+$grid-background-total-columns: 12;
+$grid-background-column-width: 4.375em;
+$grid-background-gutter-width: 1.5em;
+$grid-background-baseline-height: 1.5em;
+$grid-background-offset: 0em; // get's set to 0 at largest breakpoint
+$grid-background-force-fluid: true;
+
+/* What kind of grid naming do you like?
+** colspans <div class=col col-4> 
+** OR
+** semantic <div class=col one-third>
+** Everyone likes it differently, see architect/_widths.scss
+*/
+$semantic-grids: false;
+$colspan-grids: true;
+
+// Colors
+
+$black:				#000;
+$grayDarker:		#353535;
+$grayDark:			#666;
+$gray:				#ddd;
+$grayLight:			#aaa;
+$grayLighter:		#eee;
+$whiteGray:			#f6f6f6;
+$white:				#fff;
+
+$blue: 				#27bcfc;
+$green: 			#5aa131;
+$yellow: 			#ffcf01;
+$orange: 			#f36c21;
+$red: 				#d34f1d;
+$offWhite: 			rgba(white,.4);
+
+// Base 
+
+$baseFontSize:    		16;
+$baseLineHeight:  		1.5;
+$bodyBackgroundColor: 	$white;
+$bodyTextColor:			$grayDarker;
+
+$baseSpacing: 1.5;
+$halfSpacing: $baseSpacing / 2;
+
+// Brand 
+
+$brandColor:			$blue;
+$brandColorSecondary:	$yellow;
+$sansSerifStack:		'Open Sans', 'Helvetica Neue', Helvetica, Sans-Serif;
+$serifStack:			Georgia, Times, serif;
+$codeFace:				Inconsolata, Monaco, Consolas, 'Andale Mono', 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;
+$brandRound:        	0.125rem; // Border Radii
+$placeholderColor:		$grayLight;
+$linkColor:				$brandColor;
+
+// Buttons
+
+$btnPrimary: 				$brandColor;
+$btnSecondary: 				$yellow;
+$btnText:					$white;
+
+// Nav
+$currentMenuItemColor: 		$brandColor;
+
+// Sprites
+$spritePath:				"../img/sprite.png";
+
+// Forms
+$inputBorder:			1px solid $gray;
+$inputShadow:			inset 0 0 6px $gray;
+$inputPadding:			0.25em 0.5em;
+$inputBackgroundColor: 	$white;
+
+// Indeces
+$lowZ:				10;
+$midZ:				100;
+$highZ:				1000;
+
+// Breakpoints
+// This framework makes no assumptions about your design & patterns.  Therefore there are no "pre-determined" breakpoints and we don't
+// force anything into place.  We simply Cascade upwards, if that makes any sense.  You'll never see a media query like min-width:xx and max-width:xx
+// because this framework is fluid.  You should probably only ever need 2 or 3 breakpoints, but alas if you need more, set them here.
+$miniViewportWidth:			30em;
+$smallViewportWidth:		37.5em;
+$mediumViewportWidth:		48em;
+$largeViewportWidth:		62em;
+$xlargeViewportWidth:		71.25em;
+$xxlargeViewportWidth:		86.375em;
+$massiveViewportWidth:		112.5em;
+
+$largestBreakpoint: 		$xlargeViewportWidth;
+
+// Icon Font
+$fontPath: 	"../font/fontawesome-webfont" !default;

@@ -1,0 +1,47 @@
+{
+   "name": "Alderaan",
+   "version": "0.1.0",
+   "description": "Fluid Responsive Framework built on SASS",
+   "keywords": [
+     "fluid",
+     "responsive",
+     "framework" 
+   ],
+   "maintainers": [
+     {
+       "name": "Rob Bennet",
+       "email": "rob@madebyhoundstooth.com",
+       "web": "http://madebyhoundstooth.com" 
+     } 
+   ],
+   "bugs": {
+       "mail": "ask@madebyhoundstooth.com"
+   },
+   "licenses": [
+     {
+       "type": "any",
+       "url": "none" 
+     } 
+   ],
+   "repositories": [
+       {
+           "type": "git",
+           "private": "true",
+           "url": "https://github.com/HoundstoothSTL/frontend-dev-starter.git" 
+       } 
+   ],
+   "dependencies": {},
+   "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-compass": "~0.1.3",
+    "grunt-contrib-copy": "~0.4.0",
+    "grunt-contrib-concat": "~0.1.3",
+    "grunt-contrib-jshint": "~0.3.0",
+    "grunt-contrib-watch": "~0.3.1",
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-contrib-mincss": "~0.3.2",
+    "grunt-contrib-imagemin": "~0.1.2",
+    "grunt-contrib-clean": "~0.4.0"
+  }
+   
+}
