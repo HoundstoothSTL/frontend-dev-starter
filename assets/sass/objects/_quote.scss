@@ -1,0 +1,71 @@
+.quote {
+	
+	@include clear();
+
+	img {
+		display: none;
+		visibility: hidden;
+	}
+
+	@include breakpoint(medium) {
+		img {
+			display: block;
+			visibility: visible;
+			float:left;
+			margin-right:$baseSpacing+em;
+		}
+	}
+	
+	blockquote {
+		position:relative;
+		float:left;
+		background: $white;
+		padding: $baseSpacing +em;
+		margin-top:0;
+		margin-right:0;
+
+		@include breakpoint(medium) {
+			border: 1px solid $grayLight;
+			width:60%;
+			
+			&:before {
+			    content: "";
+				display: block;
+				position: absolute;
+				left: 0px;
+				top: 25px;
+				margin-left: -12px;
+				-webkit-transform: rotate(42deg);
+				-moz-transform: rotate(45deg);
+				transform: rotate(45deg);
+				background: white;
+				border: inherit;
+				width: 23px;
+				height: 24px;
+			}
+			&:after {
+			    content: "";
+				display: block;
+				position: absolute;
+				left: 0px;
+				top: 20px;
+				background: white;
+				width: 20px;
+				height: 45px;
+				margin-left: 0px;
+			}
+		}
+
+		@include breakpoint(large) {
+			width: 73%;
+		}
+
+		[class^="quote"] {
+			display:block;
+			color: $brandColor;
+			font-style: normal;
+			font-weight: 700;
+		}
+	}
+
+}

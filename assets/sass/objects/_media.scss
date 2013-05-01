@@ -1,0 +1,59 @@
+// Media Object
+/**
+* Place any image- and text-like content side-by-side, as per:
+* stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
+* E.g.:
+* 
+   <div class=media>
+       <img src=http://placekitten.com/200/300 alt="" class=media__img>
+       <p class=media__body>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+       sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+   </div>
+*
+*/
+
+.media {
+
+    display: block;
+    @extend .clearfix;
+}
+
+.media-img {
+
+    float:left;
+    margin-right: $baseSpacing +em;
+}
+
+//Reversed image location (right instead of left).
+.media-img-rev {
+
+    float: right;
+    margin-right: $baseSpacing +em;
+}
+
+.media-img img,
+.media-img-rev img {
+
+    display: block;
+}
+
+.media-body {
+    // adjustment for mobile-first
+    // If mobile, text will wrap around image, if above mobile, normal media object applies
+    overflow: visible;
+    @include breakpoint(small) { overflow: hidden; }
+}
+
+.media-body,
+.media-body > :last-child {
+
+    margin-bottom: 0;
+}
+
+// Any media object container with ""rows of media objects" should get margins"
+.media-objects .media {
+
+    padding-bottom:(2 * $baseSpacing)+em;
+
+    @include breakpoint(large) { padding-top:(2 * $baseSpacing)+em; }
+}

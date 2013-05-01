@@ -1,0 +1,27 @@
+
+.btn {
+	cursor:pointer;
+	display: inline-block;
+	margin-bottom: 1rem; 
+	padding: 1em;
+	border: 1px solid;
+	border-radius: $brandRound;
+	@include box-shadow(0 .125em .325em -.325em rgba($black,.8), inset 0 .0625em $offWhite, inset 0 -.125em rgba($black,.15));
+	color: $btnText !important;
+	font-weight: 400;
+	text: {
+		decoration: none;
+		shadow: 0 -.0625em rgba(black,.5);
+	}
+	@include font-size(16);
+	@include transition(0.1s ease-in-out); 
+	
+}
+
+.btn-primary {
+	@include btn-theme($btnPrimary); 
+}
+
+.btn-secondary {
+	@include btn-theme($btnSecondary);
+}

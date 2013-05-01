@@ -1,0 +1,50 @@
+/*------------------------------------*\
+    $FORMS
+------------------------------------*/
+fieldset {
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+label,
+input,
+textarea {
+	display: block;
+}
+
+label {
+	color: $white;
+}
+
+input,
+textarea {
+	padding:$inputPadding;
+	margin-bottom: ($baseSpacing/2) +em;
+}
+
+.search-input {
+	@include border-radius(1em);
+	border:$inputBorder;
+}
+
+.inline-form {
+	display: block;
+	
+	input {
+		float:left;
+		width:60%;
+		margin-right:4px;
+	}
+
+	button,
+	input[type="submit"] {
+		float:left;
+	}
+}
+
+.attached-button {
+	input {
+		margin-right:0;
+	}
+}

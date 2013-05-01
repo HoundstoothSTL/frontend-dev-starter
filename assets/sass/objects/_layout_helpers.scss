@@ -1,0 +1,37 @@
+/*------------------------------------*\
+    $Layout Adjustments
+------------------------------------*/
+// Add the .target class to anchored items to compensate for fixed header spacing issues
+.target:before { 
+  content:"";
+  display:block;
+  	@if ($fixedNavHeight) {
+  		height:$fixedNavHeight; // fixed header height
+  		margin:$fixedNavHeight*-1 0 0; // negative fixed header height
+	}
+}
+
+.full-width {
+	min-width: 100%;
+	min-height: 1px;
+}
+
+.grid-images {
+	@include clear();
+
+	.grid-image {
+
+		width:100%;
+		margin-bottom:0;
+		
+		@include breakpoint(small) {
+			padding-left:0;
+			float:left;
+			width:50%;
+		}
+
+		@include breakpoint(medium) {
+			width:16.666%;
+		}
+	}
+}
