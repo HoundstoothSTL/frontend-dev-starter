@@ -1,0 +1,75 @@
+html {}
+
+body {
+	position:relative;
+	background:$bodyBackgroundColor;
+	font-size: $baseFontSize +px;
+	line-height: $baseLineHeight +em;
+	font-family: $sansSerifStack;
+	color:$bodyTextColor;
+}
+
+section {
+	margin-bottom:$baseSpacing+em;
+	padding-bottom:$baseSpacing+em;
+}
+
+address {
+	font-style:normal;
+	
+	[itemprop="title"],
+	[itemprop="streetAddress"] {
+		display: block;
+	}
+}
+
+[itemprop="telephone"],
+[itemprop="email"] {
+	display:block;
+}
+
+a,
+a:active,
+a:visited {
+	cursor: pointer;
+	text-decoration: none;
+	color:$linkColor;
+	font-weight:400;
+}
+
+:focus {
+	outline: none;
+}
+
+input[placeholder], 
+[placeholder], 
+*[placeholder],
+::-webkit-input-placeholder,
+::-moz-placeholder {
+	color:$placeholderColor;
+}
+
+.primary-header {
+	
+}
+
+.primary-logo {
+	
+}
+
+.intro {
+	
+}
+
+.main-content {
+	
+}
+
+.primary-footer {
+
+	.copyright {
+		
+	}
+}
+
+
