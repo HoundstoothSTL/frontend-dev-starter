@@ -5,10 +5,8 @@
 .target:before { 
   content:"";
   display:block;
-  	@if ($fixedNavHeight) {
-  		height:$fixedNavHeight; // fixed header height
-  		margin:$fixedNavHeight*-1 0 0; // negative fixed header height
-	}
+  //height:$fixedNavHeight; // fixed header height
+  //margin:$fixedNavHeight*-1 0 0; // negative fixed header height
 }
 
 .full-width {

@@ -43,10 +43,10 @@
 @import 'project/_general';
 
 	// Sections
-	@import 'templates/_homepage';
-	@import 'templates/_about';
-	@import 'templates/_blog';
-	@import 'templates/_contact';
+	@import 'project/templates/_homepage';
+	@import 'project/templates/_about';
+	@import 'project/templates/_blog';
+	@import 'project/templates/_contact';
 
 // Media Queries
 @import 'responsive/responsive';
