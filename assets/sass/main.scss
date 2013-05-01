@@ -1,4 +1,4 @@
-// All compiled into /css/core.css
+// All compiled into /css/main.css
 
 @import 'compass';
 
@@ -17,13 +17,13 @@
 @import 'development/_debug';
 
 // Components
-@import 'components/_modules';
-@import 'components/_media';
-@import 'components/_overlays';
-@import 'components/_quote';
-@import 'components/_layout_helpers';
-@import 'components/_forms';
-@import 'components/_buttons';
+@import 'objects/_modules';
+@import 'objects/_media';
+@import 'objects/_overlays';
+@import 'objects/_quote';
+@import 'objects/_layout_helpers';
+@import 'objects/_forms';
+@import 'objects/_buttons';
 
 // Architect
 @import	'architect/_widths';
